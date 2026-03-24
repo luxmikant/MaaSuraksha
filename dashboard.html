@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ASHA Dashboard</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&family=Inter:wght@400;500&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <script src="js/translations.js"></script>
+</head>
+
+<body>
+
+  <div id="loader">
+    <div class="heart"></div>
+    <p>Loading dashboard…</p>
+  </div>
+
+  <nav class="navbar glass fade-down">
+    <div class="logo" data-i18n="nav-brand">🤍 MaaSuraksha</div>
+    <div class="nav-actions">
+      <button id="langToggle" class="icon-btn">🌐</button>
+      <button id="themeToggle" class="icon-btn">🌙</button>
+      <a href="index.html" class="nav-btn" data-i18n="nav-home">Home</a>
+    </div>
+  </nav>
+
+  <section class="dashboard fade-up">
+    <h2 data-i18n="dash-title">ASHA Dashboard</h2>
+
+    <div class="dashboard-grid" id="dashboardGrid">
+      <p>Loading alerts...</p>
+    </div>
+  </section>
+
+  <script src="js/main.js"></script>
+</body>
+
+</html>

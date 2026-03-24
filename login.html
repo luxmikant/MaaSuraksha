@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login / Signup</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&family=Inter:wght@400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <script src="js/translations.js"></script>
+</head>
+
+<body>
+
+    <div id="loader">
+        <div class="heart"></div>
+        <p>Loading…</p>
+    </div>
+
+    <nav class="navbar glass fade-down">
+        <div class="logo" data-i18n="nav-brand">🤍 MaaSuraksha</div>
+        <div class="nav-actions">
+            <button id="langToggle" class="icon-btn">🌐</button>
+            <button id="themeToggle" class="icon-btn">🌙</button>
+            <a href="index.html" class="nav-btn" data-i18n="nav-home">Home</a>
+        </div>
+    </nav>
+
+    <section class="form-wrapper glass fade-up tilt" style="max-width: 450px;">
+        <div id="loginFormContainer">
+            <h2 data-i18n="auth-login-title">Welcome Back</h2>
+            <p class="subtext" data-i18n="auth-login-desc">Sign in to continue to your dashboard.</p>
+
+            <form class="auth-box" id="loginForm">
+                <div class="field">
+                    <label data-i18n="auth-username">Username</label>
+                    <input type="text" id="loginUser" required>
+                </div>
+
+                <div class="field">
+                    <label data-i18n="auth-password">Password</label>
+                    <input type="password" id="loginPass" required>
+                </div>
+
+                <button type="submit" class="primary-btn full" data-i18n="auth-btn-login">Login</button>
+                <p id="loginOutput" class="ml-note"></p>
+            </form>
+
+            <p class="auth-swap" id="switchToSignup" data-i18n="auth-swap-signup">Don't have an account? Sign Up</p>
+        </div>
+
+        <div id="signupFormContainer" style="display: none;">
+            <h2 data-i18n="auth-signup-title">Create Account</h2>
+            <p class="subtext" data-i18n="auth-signup-desc">Join MaaSuraksha today.</p>
+
+            <form class="auth-box" id="signupForm">
+                <div class="field">
+                    <label data-i18n="auth-username">Username</label>
+                    <input type="text" id="signupUser" required>
+                </div>
+
+                <div class="field">
+                    <label data-i18n="auth-password">Password</label>
+                    <input type="password" id="signupPass" required>
+                </div>
+
+                <div class="field">
+                    <label data-i18n="auth-role">I am a...</label>
+                    <select id="signupRole">
+                        <option value="patient" data-i18n="auth-role-patient">Patient (Mother)</option>
+                        <option value="asha" data-i18n="auth-role-asha">ASHA Worker</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="primary-btn full" data-i18n="auth-btn-signup">Sign Up</button>
+                <p id="signupOutput" class="ml-note"></p>
+            </form>
+
+            <p class="auth-swap" id="switchToLogin" data-i18n="auth-swap-login">Already have an account? Login</p>
+        </div>
+    </section>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

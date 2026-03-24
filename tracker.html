@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Daily Maternity Tracker</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&family=Inter:wght@400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <script src="js/translations.js"></script>
+</head>
+
+<body>
+
+    <div id="loader">
+        <div class="heart"></div>
+        <p>Loading Tracker…</p>
+    </div>
+
+    <nav class="navbar glass fade-down">
+        <div class="logo" data-i18n="nav-brand">🤍 MaaSuraksha</div>
+        <div class="nav-actions">
+            <button id="langToggle" class="icon-btn">🌐</button>
+            <button id="themeToggle" class="icon-btn">🌙</button>
+            <a href="index.html" class="nav-btn" data-i18n="nav-home">Home</a>
+        </div>
+    </nav>
+
+    <section class="form-wrapper glass fade-up tilt">
+        <h2 data-i18n="tracker-title">Daily Tracker</h2>
+        <p class="subtext" data-i18n="tracker-desc">Log your daily progress and symptoms.</p>
+
+        <form class="tracker-form">
+            <div class="field">
+                <label data-i18n="label-mood">How are you feeling today?</label>
+                <select id="moodInput" required>
+                    <option value="Great" data-i18n="mood-great">😊 Great</option>
+                    <option value="Good" data-i18n="mood-good">🙂 Good</option>
+                    <option value="Okay" data-i18n="mood-okay">😐 Okay</option>
+                    <option value="Bad" data-i18n="mood-bad">😞 Bad</option>
+                </select>
+            </div>
+
+            <div class="field">
+                <label data-i18n="label-water">Water Intake (Glasses)</label>
+                <input type="number" id="waterInput" placeholder="e.g. 8" required min="0">
+            </div>
+
+            <div class="field">
+                <label data-i18n="label-sleep">Sleep (Hours)</label>
+                <input type="number" step="0.5" id="sleepInput" placeholder="e.g. 7.5" required min="0">
+            </div>
+
+            <div class="field">
+                <label data-i18n="label-symptoms">Any Symptoms?</label>
+                <input type="text" id="symptomsInput" placeholder="e.g. Nausea, headache...">
+            </div>
+
+            <button type="submit" class="primary-btn full" data-i18n="btn-save">Save Entry</button>
+            <p id="trackerResult" class="ml-note"></p>
+        </form>
+    </section>
+
+    <!-- Timeline visualization below -->
+    <section class="dashboard fade-up" style="margin-top: 2rem;">
+        <h2 data-i18n="tracker-recent">Recent Entries</h2>
+        <div class="dashboard-grid" id="trackerTimeline">
+            <!-- Populated via JS -->
+            <p>Loading entries...</p>
+        </div>
+    </section>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

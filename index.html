@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MaaSuraksha</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&family=Inter:wght@400;500&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <script src="js/translations.js"></script>
+</head>
+
+<body>
+
+  <!-- LOADER -->
+  <div id="loader">
+    <div class="heart"></div>
+    <p>Loading gentle care…</p>
+  </div>
+
+  <nav class="navbar glass fade-down">
+    <div class="logo" data-i18n="nav-brand">🤍 MaaSuraksha</div>
+    <div class="nav-actions">
+      <button id="langToggle" class="icon-btn">🌐</button>
+      <button id="themeToggle" class="icon-btn">🌙</button>
+      <a href="index.html" class="nav-btn" data-i18n="nav-home">Home</a>
+      <a href="tracker.html" class="nav-btn" data-i18n="nav-tracker">Daily Tracker</a>
+      <a href="form.html" class="nav-btn" data-i18n="nav-screening">Start Screening</a>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-text fade-up">
+      <h1 data-i18n="hero-title">Gentle care<br><span>for every mother</span></h1>
+      <p data-i18n="hero-desc">
+        A calm, AI-assisted maternal screening and care tracking system.
+      </p>
+      <a href="form.html" class="primary-btn" data-i18n="hero-btn">Begin Screening</a>
+    </div>
+
+    <div class="hero-visual fade-up">
+      <img src="assets/maternal_care_hero.png" alt="Maternal Care Illustration" class="hero-image float-anim">
+    </div>
+  </section>
+
+  <section class="features">
+    <div class="feature-card glass tilt">
+      <h3 data-i18n="feat1-title">Early Awareness</h3>
+      <p data-i18n="feat1-desc">Identify risks before complications arise.</p>
+    </div>
+
+    <div class="feature-card glass tilt">
+      <h3 data-i18n="feat2-title">Mother-First Design</h3>
+      <p data-i18n="feat2-desc">Soft visuals that reduce anxiety.</p>
+    </div>
+
+    <div class="feature-card glass tilt">
+      <h3 data-i18n="feat3-title">ASHA Friendly</h3>
+      <p data-i18n="feat3-desc">Digital records with minimal effort.</p>
+    </div>
+  </section>
+
+  <footer>
+    <p data-i18n="footer-text">⚠️ Screening support only. Not medical diagnosis.</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+
+</html>
