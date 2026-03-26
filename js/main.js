@@ -37,6 +37,11 @@ if (langToggle) {
 
 // Role-Based UI
 const userRole = localStorage.getItem('userRole');
+const API_BASE_URL = window.MAASURAKSHA_API_BASE || '';
+
+function apiUrl(path) {
+  return `${API_BASE_URL}${path}`;
+}
 
 // Protect dashboard
 if (window.location.pathname.includes('dashboard.html') && userRole !== 'asha') {
@@ -62,7 +67,7 @@ function updateNav() {
     logoutBtn.textContent = 'Logout';
     logoutBtn.onclick = async (e) => {
       e.preventDefault();
-      await fetch('/api/auth/logout', { method: 'POST' });
+      await fetch(apiUrl('/api/auth/logout'), { method: 'POST' });
       localStorage.removeItem('userRole');
       window.location.href = 'login.html';
     };
@@ -135,7 +140,7 @@ if (screeningForm) {
     };
 
     try {
-      const response = await fetch('/api/predict', {
+      const response = await fetch(apiUrl('/api/predict'), {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -165,7 +170,7 @@ const dashboardGrid = document.getElementById('dashboardGrid');
 if (dashboardGrid) {
   async function loadAlerts() {
     try {
-      const response = await fetch('/api/alerts');
+      const response = await fetch(apiUrl('/api/alerts'));
       const data = await response.json();
 
       dashboardGrid.innerHTML = '';
@@ -241,7 +246,7 @@ if (trackerForm) {
     };
 
     try {
-      const response = await fetch('/api/tracker', {
+      const response = await fetch(apiUrl('/api/tracker'), {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload)
@@ -267,7 +272,7 @@ const trackerTimeline = document.getElementById('trackerTimeline');
 if (trackerTimeline) {
   window.loadTrackerEntries = async function () {
     try {
-      const response = await fetch('/api/tracker');
+      const response = await fetch(apiUrl('/api/tracker'));
       const data = await response.json();
 
       trackerTimeline.innerHTML = '';
@@ -342,7 +347,7 @@ if (loginForm) {
     out.style.color = "var(--text)";
 
     try {
-      const res = await fetch('/api/auth/login', {
+      const res = await fetch(apiUrl('/api/auth/login'), {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -378,7 +383,7 @@ if (signupForm) {
     out.style.color = "var(--text)";
 
     try {
-      const res = await fetch('/api/auth/signup', {
+      const res = await fetch(apiUrl('/api/auth/signup'), {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
